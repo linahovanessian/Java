@@ -3,6 +3,7 @@ package lambda.javabrains.unit1;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * @author linahovanessian on 6/19/18.
@@ -46,30 +47,25 @@ public class Main {
     private Operation sort() {
         return (personList -> {
             Collections.sort( personList, (p1, p2) -> (p2.getLastName().compareTo( p1.getLastName() )) );
-            for (Person person : personList) {
-                System.out.println( person.toString() );
-            }
+            printConditionally( personList, p -> true );
         });
 
     }
 
     private Operation printAll() {
-        return (personList -> {
-            for (Person person : personList) {
-                System.out.println( person.toString() );
-            }
-        });
+        return personList -> printConditionally( personList, p -> true );
+
     }
 
     private Operation filterLastName() {
+        return personList -> printConditionally( personList, person -> person.getLastName().toLowerCase().startsWith( "c" ) );
+    }
 
-        return (personList -> {
-            for (Person person : personList) {
-                if (person.getLastName().toLowerCase().startsWith( "c" ))
-                    System.out.println( person.toString() );
-            }
-        });
-
+    private void printConditionally(List<Person> personList, Predicate<Person> predicate) {
+        personList.forEach( person -> {
+            if (predicate.test( person ))
+                System.out.println( person.toString() );
+        } );
     }
 
 
