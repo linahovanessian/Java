@@ -13,7 +13,7 @@ public class Main {
     //2.Prints all the elements in the list
     //3.Print all the people who have lastName starting with C
 
-    static List<Person> personList = Arrays.asList(
+    private static List<Person> personList = Arrays.asList(
 
             new Person( "zina", "Hovanessian", 31 ),
             new Person( "Abi", "msksk", 14 ),
@@ -43,7 +43,7 @@ public class Main {
     }
 
 
-    public Operation sort() {
+    private Operation sort() {
         return (personList -> {
             Collections.sort( personList, (p1, p2) -> (p2.getLastName().compareTo( p1.getLastName() )) );
             for (Person person : personList) {
@@ -53,7 +53,7 @@ public class Main {
 
     }
 
-    public Operation printAll() {
+    private Operation printAll() {
         return (personList -> {
             for (Person person : personList) {
                 System.out.println( person.toString() );
@@ -61,7 +61,7 @@ public class Main {
         });
     }
 
-    public Operation filterLastName() {
+    private Operation filterLastName() {
 
         return (personList -> {
             for (Person person : personList) {
