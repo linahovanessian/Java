@@ -1,4 +1,4 @@
-package hackerRank.advanced.reflection;
+package hackerRank.reflection;
 
 /**
  * @author linahovanessian on 6/21/18.

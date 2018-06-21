@@ -1,4 +1,4 @@
-package hackerRank.advanced.reflection;
+package hackerRank.reflection;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
