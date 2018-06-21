@@ -9,13 +9,8 @@ import java.util.Arrays;
 public class Solution {
 
     public static void main(String[] args) {
-        Class student = null;
-        try {
-            student = Class.forName( Student.class.getName() );
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        Arrays.asList( student.getMethods() ).stream()
+        Class student = Student.class;
+        Arrays.asList( student.getDeclaredMethods() ).stream()
                 .map( Method::getName )
                 .sorted()
                 .forEach( System.out::println );
