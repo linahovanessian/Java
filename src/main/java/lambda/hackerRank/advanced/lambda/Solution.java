@@ -1,4 +1,4 @@
-package lambda.hackerRank;
+package lambda.hackerRank.advanced.lambda;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package lambda.hackerRank;
+package lambda.hackerRank.advanced.lambda;
 
 /**
  * @author linahovanessian on 6/18/18.
